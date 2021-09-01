@@ -103,7 +103,7 @@ where
                 conn.batch_execute("ROLLBACK")
             } else {
                 conn.batch_execute(&format!(
-                    "ROLLBACK TO SAVEPOINT diesel_savepoint_{}",
+                    ";ROLLBACK TO SAVEPOINT diesel_savepoint_{}",
                     transaction_depth - 1
                 ))
             },
